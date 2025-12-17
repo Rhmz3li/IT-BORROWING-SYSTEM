@@ -6,7 +6,7 @@ export const login=createAsyncThunk("auth/login",async(udata)=>{
 
     try{
 
-        const response=await axios.post("https://it-borrowing-system.onrender.com/login",udata);
+        const response=await axios.post("https://it-borrowing-system-server.onrender.com/login",udata);
 
         return response.data;
 
@@ -24,7 +24,7 @@ export const register=createAsyncThunk("auth/register",async(udata)=>{
 
     try{
 
-        const response=await axios.post("https://it-borrowing-system.onrender.com/register",udata);
+        const response=await axios.post("https://it-borrowing-system-server.onrender.com/register",udata);
 
         return response.data.message;
 

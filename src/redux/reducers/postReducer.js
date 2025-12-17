@@ -6,7 +6,7 @@ export const fetchPosts=createAsyncThunk("posts/fetchPosts",async()=>{
 
     try{
 
-        const response=await axios.get("https://it-borrowing-system.onrender.com/showPosts");
+        const response=await axios.get("https://it-borrowing-system-server.onrender.com/showPosts");
 
         return response.data;
 
@@ -24,7 +24,7 @@ export const fetchDevicePosts=createAsyncThunk("posts/fetchDevicePosts",async(de
 
     try{
 
-        const response=await axios.get(`https://it-borrowing-system.onrender.com/showPostsByDevice/${deviceId}`);
+        const response=await axios.get(`https://it-borrowing-system-server.onrender.com/showPostsByDevice/${deviceId}`);
 
         return response.data;
 
@@ -42,7 +42,7 @@ export const addPost=createAsyncThunk("posts/addPost",async(postData)=>{
 
     try{
 
-        const response=await axios.post("https://it-borrowing-system.onrender.com/savePost",postData);
+        const response=await axios.post("https://it-borrowing-system-server.onrender.com/savePost",postData);
 
         return response.data;
 
@@ -60,7 +60,7 @@ export const updatePost=createAsyncThunk("posts/updatePost",async({id,postData})
 
     try{
 
-        const response=await axios.put(`https://it-borrowing-system.onrender.com/updatePost`,{...postData,_id:id});
+        const response=await axios.put(`https://it-borrowing-system-server.onrender.com/updatePost`,{...postData,_id:id});
 
         return response.data;
 
@@ -78,7 +78,7 @@ export const deletePost=createAsyncThunk("posts/deletePost",async(id)=>{
 
     try{
 
-        const response=await axios.delete(`https://it-borrowing-system.onrender.com/delPost/${id}`);
+        const response=await axios.delete(`https://it-borrowing-system-server.onrender.com/delPost/${id}`);
 
         return {id,message:response.data.message};
 
@@ -96,7 +96,7 @@ export const likePost=createAsyncThunk("posts/likePost",async({id,userId})=>{
 
     try{
 
-        const response=await axios.post(`https://it-borrowing-system.onrender.com/likePost/${id}`,{userId});
+        const response=await axios.post(`https://it-borrowing-system-server.onrender.com/likePost/${id}`,{userId});
 
         return response.data;
 
@@ -114,7 +114,7 @@ export const dislikePost=createAsyncThunk("posts/dislikePost",async({id,userId})
 
     try{
 
-        const response=await axios.post(`https://it-borrowing-system.onrender.com/dislikePost/${id}`,{userId});
+        const response=await axios.post(`https://it-borrowing-system-server.onrender.com/dislikePost/${id}`,{userId});
 
         return response.data;
 

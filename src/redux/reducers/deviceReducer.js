@@ -6,7 +6,7 @@ export const fetchDevices=createAsyncThunk("devices/fetchDevices",async()=>{
 
     try{
 
-        const response=await axios.get("https://it-borrowing-system.onrender.com/showDevices");
+        const response=await axios.get("https://it-borrowing-system-server.onrender.com/showDevices");
 
         return response.data;
 
@@ -24,7 +24,7 @@ export const fetchDevice=createAsyncThunk("devices/fetchDevice",async(id)=>{
 
     try{
 
-        const response=await axios.get(`https://it-borrowing-system.onrender.com/showDevice/${id}`);
+        const response=await axios.get(`https://it-borrowing-system-server.onrender.com/showDevice/${id}`);
 
         return response.data;
 
@@ -42,7 +42,7 @@ export const addDevice=createAsyncThunk("devices/addDevice",async(deviceData)=>{
 
     try{
 
-        const response=await axios.post("https://it-borrowing-system.onrender.com/saveDevice",deviceData);
+        const response=await axios.post("https://it-borrowing-system-server.onrender.com/saveDevice",deviceData);
 
         return response.data;
 
@@ -60,7 +60,7 @@ export const updateDevice=createAsyncThunk("devices/updateDevice",async({id,devi
 
     try{
 
-        const response=await axios.put(`https://it-borrowing-system.onrender.com/updateDevice`,{...deviceData,_id:id});
+        const response=await axios.put(`https://it-borrowing-system-server.onrender.com/updateDevice`,{...deviceData,_id:id});
 
         return response.data;
 
@@ -78,7 +78,7 @@ export const deleteDevice=createAsyncThunk("devices/deleteDevice",async(id,{reje
 
     try{
 
-        const response=await axios.delete(`https://it-borrowing-system.onrender.com/deleteDevice/${id}`);
+        const response=await axios.delete(`https://it-borrowing-system-server.onrender.com/deleteDevice/${id}`);
 
         return {id,message:response.data.message};
 

@@ -6,7 +6,7 @@ export const fetchBorrowings=createAsyncThunk("borrowings/fetchBorrowings",async
 
     try{
 
-        const response=await axios.get("https://it-borrowing-system.onrender.com/showBorrowings");
+        const response=await axios.get("https://it-borrowing-system-server.onrender.com/showBorrowings");
 
         return response.data;
 
@@ -24,7 +24,7 @@ export const fetchUserBorrowings=createAsyncThunk("borrowings/fetchUserBorrowing
 
     try{
 
-        const response=await axios.get(`https://it-borrowing-system.onrender.com/showBorrowingsByUser/${userId}`);
+        const response=await axios.get(`https://it-borrowing-system-server.onrender.com/showBorrowingsByUser/${userId}`);
 
         return response.data;
 
@@ -42,7 +42,7 @@ export const addBorrowing=createAsyncThunk("borrowings/addBorrowing",async(borro
 
     try{
 
-        const response=await axios.post("https://it-borrowing-system.onrender.com/saveBorrowing",borrowingData);
+        const response=await axios.post("https://it-borrowing-system-server.onrender.com/saveBorrowing",borrowingData);
 
         return response.data;
 
@@ -60,7 +60,7 @@ export const updateBorrowing=createAsyncThunk("borrowings/updateBorrowing",async
 
     try{
 
-        const response=await axios.put(`https://it-borrowing-system.onrender.com/updateBorrowing`,{...borrowingData,_id:id});   //
+        const response=await axios.put(`https://it-borrowing-system-server.onrender.com/updateBorrowing`,{...borrowingData,_id:id});   //
 
         return response.data;
 
@@ -78,7 +78,7 @@ export const deleteBorrowing=createAsyncThunk("borrowings/deleteBorrowing",async
 
     try{
 
-        const response=await axios.delete(`https://it-borrowing-system.onrender.com/deleteBorrowing/${id}`);
+        const response=await axios.delete(`https://it-borrowing-system-server.onrender.com/deleteBorrowing/${id}`);
 
         return {id,message:response.data.message};
 
